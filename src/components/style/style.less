@@ -1,0 +1,256 @@
+@import 'loading.less';
+@import 'animate.less';
+@import 'bootstrap.less';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+@font-face {
+	font-family: 'prismregular';
+	src: url("/assets/fonts/prism-regular-webfont.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-color: #f0ecf2;
+@font-secondary: #6c3b7b;
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #2f2d2f;
+	min-height: 100%;
+
+	margin: 0;
+	position: relative;
+
+	color: @font-color;
+	font-family: 'Inconsolata', monospace;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+}
+
+a,
+a:visited {
+	color: @font-color;
+
+	-webkit-transition: color 0.3s; /* Safari */
+	transition: color 0.3s;
+}
+
+a:hover {
+	color: @font-secondary;
+}
+
+h2 {
+	font-family: 'Roboto Mono', monospace;
+}
+
+#body {
+	display: block;
+	margin: 0 auto;
+
+	position: relative;
+
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.content {
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+// Terminal Window BG
+.container.content {
+	background: rgba(12, 12, 12, 0.75);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+	border-radius: 0 0 5px 5px;
+}
+
+.statusbar {
+	color: #000;
+	min-height: 21px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: block;
+	box-shadow: #f1f1f1 0 1px inset;
+	background: linear-gradient(#e4e4e4, #b8b7b8);
+	border-radius: 4px 4px 0 0;
+}
+
+.about-content {
+	padding: 15px 0;
+	font-size: 16px;
+	line-height: 1.75;
+}
+
+#about {
+	#profile-image {
+		max-width: 100%;
+		border-radius: 3px;
+		filter: grayscale(100%);
+		box-shadow: 3px 3px 15px #000;
+	}
+}
+
+.project {
+	.project-container {
+		padding-bottom: 15px;
+		padding-top: 15px;
+	}
+	.icon-column {
+		height: 100%;
+		min-height: 100px;
+
+		margin-bottom: 15px;
+
+		padding: 0;
+		padding-bottom: 15px;
+
+		color: #fff;
+		text-align: center;
+		&:hover {
+			.project-icon img,
+			.project-icon i,
+			.project-title h4,
+			.project-title small {
+				background: rgba(221, 221, 221, .6);
+			}
+		}
+		.project-icon {
+			overflow: hidden;
+			display: block;
+			img {
+				width: 100%;
+				height: auto;
+
+				border-radius: 16px;
+				background: rgb(108, 59, 123);
+				box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
+				transition: background 0.2s ease;
+
+				margin-bottom: 5px;
+			}
+			i {
+				font-size: 8rem;
+				padding: 1.5rem;
+				border-radius: 16px;
+				background: rgb(108, 59, 123);
+				box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
+				margin-bottom: 5px;
+				transition: background 0.2s ease;
+			}
+		}
+		.project-title {
+			display: block;
+			width: 100%;
+
+			filter: drop-shadow(1px 0px 5px rgba(0, 0, 0, .4));
+			h4 {
+				font-weight: bold;
+			}
+			h4,
+			small {
+				border-radius: 8px;
+				background: rgb(108, 59, 123);
+				transition: background 0.2s ease;
+				display: table;
+				margin: 0px auto 0px auto;
+				padding: 6px 10px;
+				text-align: center;
+			}
+		}
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	h3 {
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+	small {
+		color: #ddd;
+	}
+	a {
+		text-decoration: underline;
+	}
+}
+
+#credits {
+	padding-bottom: 45px; // Height of footer + 15px
+	a {
+		text-decoration: underline;
+	}
+	ul {
+		padding: 0;
+		padding-top: 1em;
+		list-style: none;
+	}
+}
+
+nav,
+footer {
+	width: 100%;
+	overflow: hidden;
+}
+
+navigation {
+	nav {
+		z-index: 100;
+		position: fixed;
+
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		color: @font-color;
+		background: linear-gradient(#6c3b7b, #633670);
+
+		top: 0;
+		&.hideNav {
+			top: -60px;
+		}
+		transition: 0.3s ease all;
+	}
+}
+
+footer {
+	background: #000;
+	bottom: 0;
+	position: absolute;
+}
+
+.dropdown-menu {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	right: 0;
+	top: 40px;
+	z-index: 101;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+ul.horizontal-links {
+	margin: 0 auto;
+	padding: 0;
+	li {
+		display: inline-block;
+		a {
+			display: block;
+			padding: 10px;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}
